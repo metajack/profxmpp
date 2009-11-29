@@ -1,0 +1,55 @@
+.clear {
+    clear: both;
+}
+
+.button {
+    border: solid 1px black;
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
+div.disabled {
+    -moz-opacity: 0.25;
+    opacity: 0.25;
+}
+
+.hidden {
+    display: none;
+}
+
+#sketch {
+    border: solid 1px black;
+}
+
+#color-000 {
+    background-color: #000;
+}
+
+#color-f00 {
+    background-color: #f00;
+}
+
+#color-0f0 {
+    background-color: #0f0;
+}
+
+#color-00f {
+    background-color: #00f;
+}
+
+#width-2 div {
+    background-color: #000;
+    height: 5px;
+    margin-top: 10px;
+}
+
+#width-4 div {
+    background-color: #000;
+    height: 10px;
+    margin-top: 7px;
+}
+
+#erase {
+    margin-left: 5px;
+}

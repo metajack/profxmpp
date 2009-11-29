@@ -1,0 +1,95 @@
+body {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+}
+
+.hidden {
+    display: none
+}
+
+.clear {
+    clear: both;
+}
+
+#toolbar {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+#room-name {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+#room-topic {
+    font-style: italic;
+}
+
+#chat-area {
+    float: left;
+    width: 500px;
+}
+
+#chat {
+    overflow: auto;
+    height: 400px;
+    border: solid 1px #ccc;
+}
+
+#participants {
+    float: left;
+    width: 200px;
+    height: 500px;
+    overflow: auto;
+}
+
+#participant-list {
+    list-style: none;
+}
+
+#input {
+    width: 95%;
+    font-size: 120%;
+}
+
+.notice {
+    font-style: italic;
+    font-weight: bold;
+    color: #3d3;
+}
+
+.error {
+    color: #d33;
+}
+
+.message {
+    color: #aaa;
+}
+
+.nick {
+    color: #66f;
+}
+
+.self {
+    color: #f66;
+}
+
+.body {
+    color: #000;
+}
+
+.delayed {
+    opacity: 0.5;
+}
+
+.private {
+    background-color: #fdd;
+}
+
+.action {
+    color: #333;
+}

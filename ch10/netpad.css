@@ -1,0 +1,41 @@
+body {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+#pad {
+    width: 500px;
+    height: 300px;
+}
+
+#disconnect {
+    margin: 5px 5px 5px 50px;
+}
+
+#status {
+    padding: 5px 15px 5px 15px;
+    float: left;
+}
+
+.no-collab {
+    background-color: #fcc;
+}
+
+.try-collab {
+    background-color: #ccf;
+}
+
+.collab {
+    background-color: #cfc;
+}

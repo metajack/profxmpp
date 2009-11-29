@@ -1,0 +1,11 @@
+body {
+    font-family: Helvetica;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#log {
+    background-color: #ccc;
+}

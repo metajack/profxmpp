@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <title>SketchCast - Chapter 9</title>
+
+    <link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/cupertino/jquery-ui.css'>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js'></script>
+    <script src='../scripts/strophe.js'></script>
+    <script src='../scripts/flXHR.js'></script>
+    <script src='../scripts/strophe.flxhr.js'></script>
+
+    <link rel='stylesheet' href='sketchcast.css'>
+    <script src='sketchcast.js'></script>
+  </head>
+  <body>
+    <h1>SketchCast</h1>
+
+    <!-- The status bar -->
+    <div id='status'></div>
+
+    <!-- The drawing tools.  The ids are the button values. -->
+    <div class='button disabled color' id='color-000'></div>
+    <div class='button disabled color' id='color-f00'></div>
+    <div class='button disabled color' id='color-0f0'></div>
+    <div class='button disabled color' id='color-00f'></div>
+    <div class='button disabled linew' id='width-2'><div></div></div>
+    <div class='button disabled linew' id='width-4'><div></div></div>
+    <input id='erase' type='button' value='erase sketch'
+           disabled>
+    <input id='disconnect' type='button' value='disconnect'
+           disabled>
+    <div class='clear'></div>
+
+    <!-- The drawing area -->
+    <canvas id='sketch' class='disabled' width='600'
+            height='500'></canvas>
+
+    <!-- The login dialog -->
+    <div id='login_dialog' class='hidden'>
+      <label>JID:</label><input type='text' id='jid'>
+      <label>Password:</label><input type='password' id='password'>
+      <label>Pubsub service:</label><input type='text' id='service'>
+      <label>Pubsub node:</label><input type='text' id='node'>
+    </div>
+
+    <!-- The error dialog -->
+    <div id='error_dialog' class='hidden'>
+      <p></p>
+    </div>
+  </body>
+</html>

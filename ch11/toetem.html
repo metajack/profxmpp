@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>Toetem - Chapter 11</title>
+    
+    <link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/cupertino/jquery-ui.css'>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js'></script>
+    <script src='../scripts/strophe.js'></script>
+    <script src='../scripts/flXHR.js'></script>
+    <script src='../scripts/strophe.flxhr.js'></script>
+
+    <link rel='stylesheet' href='toetem.css'>
+    <script src='toetem.js'></script>
+  </head>
+  <body>
+    <h1>Toetem</h1>
+
+    <div id='browser'>
+      <div class='buttons'>
+        <input id='disconnect' class='button' type='button' 
+               value='disconnect' disabled='disabled'>
+        <input id='wait' class='button' type='button' 
+               value='wait' disabled='disabled'>
+      </div>
+
+      <h2>Players Available</h2>
+      <table id='waiting'>
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <h2>Games In Progress</h2>
+      <table id='games'>
+        <thead>
+          <tr>
+            <th>X</th>
+            <th>O</th>
+            <th>Room</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    
+    <div id='game' class='hidden'>
+      <div class='buttons'>
+        <input id='resign' class='button' type='button' 
+               value='resign' disabled='disabled'>
+        <input id='leave' class='button' type='button' 
+               value='leave' disabled='disabled'>
+      </div>
+
+      <div id='board-area'>
+        <canvas id='board' width='300' height='300'>
+        </canvas>
+        <div id='board-status'></div>
+      </div>
+
+      <div id='chat'>
+        <div id='messages'>
+        </div>
+        <input type='text' id='input'>
+      </div>
+    </div>
+
+    <!-- login dialog -->
+    <div id='login_dialog' class='hidden'>
+      <label>JID:</label><input type='text' id='jid'>
+      <label>Password:</label><input type='password' id='password'>
+      <label>Toetem Referee</label><input type='text' id='referee'>
+    </div>
+  </body>
+</html>

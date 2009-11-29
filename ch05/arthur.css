@@ -1,0 +1,24 @@
+body {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+}
+
+#input {
+    width: 75%;
+    font-size: 16pt;
+}
+
+#counter {
+    width: 20%;
+    float: right;
+    padding: 25px;
+    font-size: 14pt;
+    color: #bbb;
+}
+
+.hidden {
+    display: none;
+}

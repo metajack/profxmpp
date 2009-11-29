@@ -1,0 +1,64 @@
+body {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+}
+
+#console {
+    padding: 10px;
+    height: 300px;
+    border: solid 1px #aaa;
+
+    background-color: #000;
+    color: #eee;
+    font-family: monospace;
+
+    overflow: auto;
+}
+
+#input {
+    width: 100%;
+    height: 100px;
+    font-family: monospace;
+}
+
+.incoming {
+    background-color: #111;
+}
+
+textarea.disabled {
+    background-color: #bbb;
+}
+
+#buttonbar {
+    margin: 10px;
+}
+
+#disconnect_button {
+    float: left;
+    width: 100px;
+}
+
+#send_button {
+    float: right;
+    width: 100px;
+}
+
+/* xml styles */
+.xml_punc { color: #888; }
+.xml_tag { color: #e77; }
+.xml_aname { color: #55d; }
+.xml_avalue { color: #77f; }
+.xml_text { color: #aaa }
+.xml_level0 { padding-left: 0; }
+.xml_level1 { padding-left: 1em; }
+.xml_level2 { padding-left: 2em; }
+.xml_level3 { padding-left: 3em; }
+.xml_level4 { padding-left: 4em; }
+.xml_level5 { padding-left: 5em; }
+.xml_level6 { padding-left: 6em; }
+.xml_level7 { padding-left: 7em; }
+.xml_level8 { padding-left: 8em; }
+.xml_level9 { padding-left: 9em; }

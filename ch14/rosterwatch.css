@@ -1,0 +1,47 @@
+body {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+}
+
+.toolbar {
+    text-align: center;
+}
+
+#roster {
+    width: 500px;
+    margin: auto;
+    border: solid 1px black;
+}
+
+.hidden {
+    display: none;
+}
+
+.contact {
+    padding: 10px;
+}
+
+.name {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.jid {
+    font-size: 80%;
+    font-style: italic;
+}
+
+.online {
+    background-color: #7f7;
+}
+
+.away {
+    background-color: #f77;
+}
+
+.offline {
+    background-color: #777;
+}

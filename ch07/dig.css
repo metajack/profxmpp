@@ -1,0 +1,54 @@
+body {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+}
+
+.hidden {
+    display: none
+}
+
+.left {
+    padding: 10px;
+    width: 400px;
+    float: left;
+}
+
+.right {
+    padding: 10px;
+    border-left: solid 1px black;
+    width: 500px;
+    float: right;
+    background-color: #eee;
+}
+
+.clear {
+    clear: both;
+}
+
+.item {
+    padding: 4px;
+}
+
+.selected {
+    background-color: #ff6;
+    font-weight: bold;
+}
+
+#input-bar {
+    padding: 10px;
+    text-align: center;
+    border-bottom: solid 2px black;
+}
+
+input {
+    font-size: 150%;
+}
+
+#tree ul {
+    line-height: 175%;
+    margin-left: 0;
+    padding-left: 10px;
+}
