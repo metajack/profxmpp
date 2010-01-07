@@ -279,9 +279,6 @@ $(document).bind('connected', function () {
     Groupie.joined = false;
     Groupie.participants = {};
 
-    Groupie.connection.rawInput = console.log;
-    Groupie.connection.rawOutput = console.log;
-
     Groupie.connection.send($pres().c('priority').t('-1'));
     
     Groupie.connection.addHandler(Groupie.on_presence,
