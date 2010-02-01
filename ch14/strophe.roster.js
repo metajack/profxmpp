@@ -137,6 +137,8 @@ Strophe.addConnectionPlugin('roster', {
         
         // notify user code of roster changes
         $(document).trigger("roster_changed", this);
+
+        return true;
     },
 
     // add a contact to the roster
