@@ -136,7 +136,7 @@ $(document).ready(function () {
             if (input[0] === '<') {
                 var xml = Peek.text_to_xml(input);
                 if (xml) {
-                    Peek.connection.send(xml);
+                    Peek.connection.send(Strophe.copyElement(xml));
                     $('#input').val('');
                 } else {
                     error = true;
