@@ -2,6 +2,7 @@ var Toetem = {
     connection: null,
     referee: null,
     NS_TOETEM: "http://metajack.im/ns/toetem",
+    NS_MUC: "http://jabber.org/protocol/muc",
     game: null,
     x_player: null,
     o_player: null,
@@ -350,7 +351,7 @@ $(document).ready(function () {
 
 $(document).bind('connect', function (ev, data) {
     var conn = new Strophe.Connection(
-        "http://localhost:5280/xmpp-httpbind");
+        "http://bosh.metajack.im:5280/xmpp-httpbind");
 
     conn.connect(data.jid, data.password, function (status) {
         if (status === Strophe.Status.CONNECTED) {
