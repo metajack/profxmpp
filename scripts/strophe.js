@@ -542,7 +542,7 @@ Strophe = {
      *  The version of the Strophe library. Unreleased builds will have
      *  a version of head-HASH where HASH is a partial revision.
      */
-    VERSION: "1.0",
+    VERSION: "1.0.1",
 
     /** Constants: XMPP Namespace Constants
      *  Common namespace constants from the XMPP RFCs and XEPs.
@@ -740,22 +740,15 @@ Strophe = {
      *  Create an XML DOM element.
      *
      *  This function creates an XML DOM element correctly across all
-     *  implementations. Specifically the Microsoft implementation of
-     *  document.createElement makes DOM elements with 43+ default attributes
-     *  unless elements are created with the ActiveX object Microsoft.XMLDOM.
-     *
-     *  Most DOMs force element names to lowercase, so we use the
-     *  _realname attribute on the created element to store the case
-     *  sensitive name.  This is required to generate proper XML for
-     *  things like vCard avatars (XEP 153).  This attribute is stripped
-     *  out before being sent over the wire or serialized, but you may
-     *  notice it during debugging.
+     *  implementations. Note that these are not HTML DOM elements, which
+     *  aren't appropriate for XMPP stanzas.
      *
      *  Parameters:
      *    (String) name - The name for the element.
-     *    (Array) attrs - An optional array of key/value pairs to use as
-     *      element attributes in the following format [['key1', 'value1'],
-     *      ['key2', 'value2']]
+     *    (Array|Object) attrs - An optional array or object containing
+     *      key/value pairs to use as element attributes. The object should
+     *      be in the format {'key': 'value'} or {key: 'value'}. The array
+     *      should have the format [['key1', 'value1'], ['key2', 'value2']].
      *    (String) text - The text child data for the element.
      *
      *  Returns:
@@ -1455,9 +1448,9 @@ Strophe.Handler.prototype = {
         if (!this.ns) {
             nsMatch = true;
         } else {
-            var self = this;
+            var that = this;
             Strophe.forEachChild(elem, null, function (elem) {
-                if (elem.getAttribute("xmlns") == self.ns) {
+                if (elem.getAttribute("xmlns") == that.ns) {
                     nsMatch = true;
                 }
             });
@@ -1991,7 +1984,7 @@ Strophe.Connection.prototype = {
 
         this.wait = wait || this.wait;
         this.hold = hold || this.hold;
-        this.wind = wind || this.wind;
+        this.window = wind || this.window;
 
         this._changeConnectStatus(Strophe.Status.ATTACHED, null);
     },
@@ -2785,21 +2778,21 @@ Strophe.Connection.prototype = {
         }
 
         // send each incoming stanza through the handler chain
-        var self = this;
+        var that = this;
         Strophe.forEachChild(elem, null, function (child) {
             var i, newList;
             // process handlers
-            newList = self.handlers;
-            self.handlers = [];
+            newList = that.handlers;
+            that.handlers = [];
             for (i = 0; i < newList.length; i++) {
                 var hand = newList[i];
                 if (hand.isMatch(child) &&
-                    (self.authenticated || !hand.user)) {
+                    (that.authenticated || !hand.user)) {
                     if (hand.run(child)) {
-                        self.handlers.push(hand);
+                        that.handlers.push(hand);
                     }
                 } else {
-                    self.handlers.push(hand);
+                    that.handlers.push(hand);
                 }
             }
         });
@@ -2885,11 +2878,11 @@ Strophe.Connection.prototype = {
             this.stream_id = bodyWrap.getAttribute("authid");
         }
         var wind = bodyWrap.getAttribute('requests');
-        if (wind) { this.window = wind; }
+        if (wind) { this.window = parseInt(wind, 10); }
         var hold = bodyWrap.getAttribute('hold');
-        if (hold) { this.hold = hold; }
+        if (hold) { this.hold = parseInt(hold, 10); }
         var wait = bodyWrap.getAttribute('wait');
-        if (wait) { this.wait = wait; }
+        if (wait) { this.wait = parseInt(wait, 10); }
         
 
         var do_sasl_plain = false;
