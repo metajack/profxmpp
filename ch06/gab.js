@@ -3,8 +3,8 @@ var Gab = {
 
     jid_to_id: function (jid) {
         return Strophe.getBareJidFromJid(jid)
-            .replace("@", "-")
-            .replace(".", "-");
+            .replace(/@/g, "-")
+            .replace(/\./g, "-");
     },
 
     on_roster: function (iq) {
