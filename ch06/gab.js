@@ -211,7 +211,7 @@ var Gab = {
                     $(this).before(elem);
                     inserted = true;
                     return false;
-                } else {
+                } else if (pres === cmp_pres) {
                     if (jid < cmp_jid) {
                         $(this).before(elem);
                         inserted = true;
