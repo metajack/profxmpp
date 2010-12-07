@@ -97,7 +97,7 @@ var Gab = {
                 if ($('#' + jid_id).length > 0) {
                     $('#' + jid_id).replaceWith(contact_html);
                 } else {
-                    Gab.insert_contact(contact_html);
+                    Gab.insert_contact($(contact_html));
                 }
             }
         });
