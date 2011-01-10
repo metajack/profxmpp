@@ -182,7 +182,7 @@ var NetPad = {
         });
 
         op.find('priority > cell').each(function () {
-            priority.push(parseInt($(this).text(), 10));
+            pri.push(parseInt($(this).text(), 10));
         });
         
         OpTrans.do_remote(NetPad.collaborator,
