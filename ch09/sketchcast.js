@@ -271,7 +271,7 @@ $(document).bind('connect', function (ev, data) {
     $('#status').html('Connecting...');
     
     var conn = new Strophe.Connection(
-        'http://localhost:5280/xmpp-httpbind');
+        'http://bosh.metajack.im:5280/xmpp-httpbind');
 
     conn.connect(data.jid, data.password, function (status) {
         if (status === Strophe.Status.CONNECTED) {
