@@ -252,9 +252,9 @@ $(document).ready(function () {
         buttons: {
             "Connect": function () {
                 $(document).trigger('connect', {
-                    jid: $('#jid').val(),
+                    jid: $('#jid').val().toLowerCase(),
                     password: $('#password').val(),
-                    referee: $('#referee').val()
+                    referee: $('#referee').val().toLowerCase()
                 });
                 
                 $('#password').val('');

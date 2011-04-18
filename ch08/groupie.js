@@ -153,11 +153,11 @@ $(document).ready(function () {
         title: 'Join a Room',
         buttons: {
             "Join": function () {
-                Groupie.room = $('#room').val();
+                Groupie.room = $('#room').val().toLowerCase();
                 Groupie.nickname = $('#nickname').val();
 
                 $(document).trigger('connect', {
-                    jid: $('#jid').val(),
+                    jid: $('#jid').val().toLowerCase(),
                     password: $('#password').val()
                 });
 

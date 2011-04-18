@@ -180,9 +180,9 @@ $(document).ready(function () {
         buttons: {
             "Connect": function () {
                 $(document).trigger('connect', {
-                    jid: $('#jid').val(),
+                    jid: $('#jid').val().toLowerCase(),
                     password: $('#password').val(),
-                    service: $('#service').val(),
+                    service: $('#service').val().toLowerCase(),
                     node: $('#node').val()
                 });
                 

@@ -238,7 +238,7 @@ $(document).ready(function () {
         buttons: {
             "Connect": function () {
                 $(document).trigger('connect', {
-                    jid: $('#jid').val(),
+                    jid: $('#jid').val().toLowerCase(),
                     password: $('#password').val()
                 });
                 
@@ -256,7 +256,7 @@ $(document).ready(function () {
         buttons: {
             "Add": function () {
                 $(document).trigger('contact_added', {
-                    jid: $('#contact-jid').val(),
+                    jid: $('#contact-jid').val().toLowerCase(),
                     name: $('#contact-name').val()
                 });
 
@@ -371,7 +371,7 @@ $(document).ready(function () {
         title: 'Start a Chat',
         buttons: {
             "Start": function () {
-                var jid = $('#chat-jid').val();
+                var jid = $('#chat-jid').val().toLowerCase();
                 var jid_id = Gab.jid_to_id(jid);
 
                 $('#chat-area').tabs('add', '#chat-' + jid_id, jid);
