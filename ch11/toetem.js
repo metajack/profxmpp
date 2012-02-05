@@ -64,7 +64,11 @@ var Toetem = {
                 });
             });
         } else if ($(message)
-                   .find('x > invite').attr('from') === Toetem.referee) {
+                   .find('x > invite').attr('from') &&
+                   Strophe.getBareJidFromJid($(message)
+                                             .find('x > invite')
+                                             .attr('from')) === 
+                   Strophe.getBareJidFromJid(Toetem.referee)) {
             Toetem.game = from;
             Toetem.watching = false;
 
@@ -97,7 +101,7 @@ var Toetem = {
 
                 $('#messages').append(
                     "<div>&lt;<span class='" + nick_style + "'>" +
-                        Strophe.getBareJidFromJid(who) +
+                        Strophe.getBareJidFromJid(from) +
                         "</span>&gt; " +
                         body + "</div>");
 
